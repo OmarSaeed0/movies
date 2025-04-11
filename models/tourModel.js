@@ -30,7 +30,8 @@ const movieSchema = new mongoose.Schema({
   BoxOffice: String,
   Production: String,
   Website: String,
-  Response: String
+  Response: String,
+  Trailer : String
 });
 
 const Movie = mongoose.model('Movie', movieSchema);
