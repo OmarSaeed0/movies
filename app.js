@@ -5,6 +5,7 @@ const tourRoutes = require('./routes/tourRoutes');
 
 
 dotenv.config({ path: './.env' });
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
