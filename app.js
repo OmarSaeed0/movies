@@ -1,22 +1,22 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const tourRoutes = require('./routes/tourRoutes');
 
 
 dotenv.config({ path: './.env' });
-const cors = require('cors');
+
 
 const app = express();
+app.use(cors({
+      origin: 'http://localhost:5173'
+
+}));
 app.use(express.json());
 //app.use(express.static(`${__dirname}`));
-app.use((req, res, next) => {
-res.header(Access-Control-Allow-Origin, 'https://movies-g9b2.onrender.com');
-res.header(Access-Control-Allow-Methods, GET, POST, PUT, DELETE);
-res.header(Access-Control-Allow-Headers, Content-Type);
-next();
-});
-app.use(cors());
+
+
 
 mongoose.connect(process.env.DATABASE).then(() => console.log('DB connection successful!'));
 
