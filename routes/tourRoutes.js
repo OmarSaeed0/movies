@@ -1,7 +1,11 @@
 const express=require("express");
 const tourContraller = require('../controllers/tourcontroller');
+const authContraller = require('../controllers/authcontrallerjs');
+
 
 const router = express.Router();
+
+router.post('/signup',authContraller.signup)
 
 router
 .route('/')
