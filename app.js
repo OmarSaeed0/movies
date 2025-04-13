@@ -15,6 +15,7 @@ res.header(Access-Control-Allow-Methods, GET, POST, PUT, DELETE);
 res.header(Access-Control-Allow-Headers, Content-Type);
 next();
 });
+app.use(cors());
 
 mongoose.connect(process.env.DATABASE).then(() => console.log('DB connection successful!'));
 
